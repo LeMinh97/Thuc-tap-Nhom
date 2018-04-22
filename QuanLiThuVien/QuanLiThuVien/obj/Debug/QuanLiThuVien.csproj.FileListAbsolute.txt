@@ -1,0 +1,16 @@
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\bin\Debug\QuanLiThuVien.exe.config
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\bin\Debug\QuanLiThuVien.exe
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\bin\Debug\QuanLiThuVien.pdb
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.Properties.Resources.resources
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.View.fr_DangNhap.resources
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.View.fr_DauSach.resources
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.View.fr_Main.resources
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.View.fr_MuonTra.resources
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.View.fr_NguoiDoc.resources
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.csproj.GenerateResource.Cache
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.exe
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.pdb
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.View.fr_HuongDan.resources
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.View.fr_TaiKhoan.resources
+C:\Users\DELL\Desktop\C#\QuanLiThuVien\QuanLiThuVien\obj\Debug\QuanLiThuVien.View.fr_TroGiup.resources
