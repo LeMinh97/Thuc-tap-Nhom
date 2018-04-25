@@ -1,4 +1,6 @@
-﻿using QuanLiThuVien.Data;
+﻿using QuanLiThuVien.DAO;
+using QuanLiThuVien.Data;
+using QuanLiThuVien.Module;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +27,7 @@ namespace QuanLiThuVien.View
             InitializeComponent();
             this.TkDangNhap = TKDN;
             LoadDSTaiKhoan();
+            LoadCbBoxLoaiTK();
             RefreshText();
         }
         void LoadDSTaiKhoan()
@@ -41,24 +44,81 @@ namespace QuanLiThuVien.View
             txtTimKiemTK.Text = "";
             cbTimKiemTK.Text = "";
         }
+
+        void LoadCbBoxLoaiTK()
+        {
+            List<TKLoaiTK> listTK = TKLoaiTKDAO.Instance.LayDSLoaiTK();
+            cbLoaiTK.DataSource = listTK;
+            cbLoaiTK.DisplayMember = "LoaiTK";
+        }
         private void btnThemTK_Click(object sender, EventArgs e)
         {
-
+            string tenDN = txtTenDN.Text;
+            string tenND = txtTenND.Text;
+            string matKhau = txtMatKhau.Text;
+            int maLoaiTK = (int)(cbLoaiTK.SelectedItem as TKLoaiTK).MaLoaiTK;
+            if (tenDN == "")
+            {
+                MessageBox.Show("Bạn chưa nhập Tên đăng nhập!", "Thông báo");
+            }
+            else if (tenND == "")
+            {
+                MessageBox.Show("Bạn chưa nhập Tên người dùng!", "Thông báo");
+            }
+            else if (matKhau == "")
+            {
+                MessageBox.Show("Bạn chưa nhập Mật khẩu!", "Thông báo");
+            }
+            else if (cbLoaiTK.Text == null)
+            {
+                MessageBox.Show("Bạn chưa chọn Loại tài khoản!", "Thông báo");
+            }
+            else
+            {
+                if (TaiKhoanMD.Instance.ThemTK(tenDN,tenND,matKhau,maLoaiTK) == true)
+                {
+                    MessageBox.Show("Thêm thành công", "Thông Báo");
+                    LoadDSTaiKhoan();
+                }
+                else MessageBox.Show("Có lỗi khi thêm đầu sách!", "Thông Báo");
+            }
         }
 
         private void btnSuaTK_Click(object sender, EventArgs e)
         {
-
+            string tenDN = txtTenDN.Text;
+            string tenND = txtTenND.Text;
+            string matKhau = txtMatKhau.Text;
+            int maLoaiTK = (int)(cbLoaiTK.SelectedItem as TKLoaiTK).MaLoaiTK;
+            if(TaiKhoanMD.Instance.SuaTK(tenDN,tenND,matKhau,maLoaiTK)==true)
+            {
+                MessageBox.Show("Sửa thành công", "Thông Báo");
+                LoadDSTaiKhoan();
+            }
+            else MessageBox.Show("Có lỗi khi sửa đầu sách!", "Thông Báo");
         }
 
         private void btnXoaTK_Click(object sender, EventArgs e)
         {
-
+            string tenDN = txtTenDN.Text;
+            if(TkDangNhap.TenDN==tenDN)
+            {
+                MessageBox.Show("Bạn đang đăng nhập bằng tài khoản này. Không thể xóa!", "Thông báo");
+                RefreshText();
+            }else
+            if (TaiKhoanMD.Instance.XoaTK(tenDN) == true)
+            {
+                MessageBox.Show("Xóa thành công", "Thông Báo");
+                RefreshText();
+                LoadDSTaiKhoan();
+            }
+            else MessageBox.Show("Có lỗi khi xóa đầu sách!", "Thông Báo");
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-
+            RefreshText();
+            LoadDSTaiKhoan();
         }
 
         private void btnVeMenu_Click(object sender, EventArgs e)
@@ -78,7 +138,46 @@ namespace QuanLiThuVien.View
 
         private void btnTimKiemTK_Click(object sender, EventArgs e)
         {
+            string maTK = txtTimKiemTK.Text;
+            string cbTim = cbTimKiemTK.SelectedItem.ToString();
+            if (cbTim == "")
+            {
+                MessageBox.Show("Bạn chưa chọn gì từ ComboBox!", "Thông báo");
+            }
+            else if (maTK == "")
+            {
+                MessageBox.Show("Bạn chưa nhập gì cả!", "Thông báo");
+            }
+            else
+            {
+                if (cbTim == "Tất cả")
+                {
+                    dgvTaiKhoan.DataSource = TaiKhoanMD.Instance.TkTheoTatCa(maTK);
+                    if (TaiKhoanMD.Instance.CheckTkTheoTatCa(maTK) == false)
+                        MessageBox.Show("Không tìm thấy kết quả nào!", "Thông báo");
+                }
 
+                if (cbTim == "Tên đăng nhập")
+                {
+                    dgvTaiKhoan.DataSource = TaiKhoanMD.Instance.TkTheoTenDangNhap(maTK);
+                    if (TaiKhoanMD.Instance.CheckTkTheoTenDangNhap(maTK) == false)
+                        MessageBox.Show("Không tìm thấy kết quả nào!", "Thông báo");
+                }
+
+                if (cbTim == "Tên người dùng")
+                {
+                    dgvTaiKhoan.DataSource = TaiKhoanMD.Instance.TkTheoTenNguoiDung(maTK);
+                    if (TaiKhoanMD.Instance.CheckTkTheoTenNguoiDung(maTK) == false)
+                        MessageBox.Show("Không tìm thấy kết quả nào!", "Thông báo");
+                }
+
+                if (cbTim == "Loại tài khoản")
+                {
+                    dgvTaiKhoan.DataSource = TaiKhoanMD.Instance.TkTheoLoaiTK(maTK);
+                    if (TaiKhoanMD.Instance.CheckTkTheoLoaiTK(maTK) == false)
+                        MessageBox.Show("Không tìm thấy kết quả nào!", "Thông báo");
+                }
+            }
         }
 
         private void dgvTaiKhoan_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
