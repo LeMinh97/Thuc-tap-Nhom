@@ -6,3 +6,11 @@ C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Properties.Reso
 C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.csproj.GenerateResource.Cache
 C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.exe
 C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.pdb
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Form1.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Views.fr_DangNhap.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Views.fr_HangHoa.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Views.fr_Main.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Views.fr_NhapHang.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Views.fr_TaiKhoan.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Views.fr_ThongKe.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Debug\QuanLiKho.Views.fr_XuatHang.resources

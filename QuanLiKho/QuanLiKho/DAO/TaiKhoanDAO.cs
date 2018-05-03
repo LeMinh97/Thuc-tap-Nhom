@@ -29,5 +29,72 @@ namespace QuanLiKho.DAO
             return null;
         }
 
+        public bool ThemTK(string tenDN, string tenND, string matKhau, string maLoaiTK)
+        {
+            string query = "INSERT dbo.TaiKhoan( TenDN, TenND, MatKhau, MaLoaiTK )VALUES  ( N'" + tenDN + "', N'" + tenND + "', N'" + matKhau + "','" + maLoaiTK + "' )";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool SuaTK(string tenDN, string tenND, string matKhau, string maLoaiTK)
+        {
+            string query = "UPDATE dbo.TaiKhoan SET TenND=N'" + tenND + "', MatKhau=N'" + matKhau + "', MaLoaiTK='" + maLoaiTK + "' WHERE TenDN=N'" + tenDN + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public bool XoaTK(string tenDN)
+        {
+            string query = "DELETE dbo.TaiKhoan WHERE TenDN=N'" + tenDN + "'";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        public DataTable TkTheoTatCa(string maTK)
+        {
+            string query = "SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.TaiKhoan,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=TaiKhoan.MaLoaiTK AND dbo.ChuyenDoiKiTuUnicode(TenDN) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%' OR dbo.ChuyenDoiKiTuUnicode(TenND) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%' OR dbo.ChuyenDoiKiTuUnicode(LoaiTK) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data;
+        }
+        public bool CheckTkTheoTatCa(string maTK)
+        {
+            string query = "SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.TaiKhoan,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=TaiKhoan.MaLoaiTK AND dbo.ChuyenDoiKiTuUnicode(TenDN) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%' OR dbo.ChuyenDoiKiTuUnicode(TenND) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%' OR dbo.ChuyenDoiKiTuUnicode(LoaiTK) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data.Rows.Count > 0;
+        }
+        public DataTable TkTheoTenDangNhap(string maTK)
+        {
+            string query = "SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.TaiKhoan,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=TaiKhoan.MaLoaiTK AND dbo.ChuyenDoiKiTuUnicode(TenDN) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data;
+        }
+        public bool CheckTkTheoTenDangNhap(string maTK)
+        {
+            string query = "SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.TaiKhoan,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=TaiKhoan.MaLoaiTK AND dbo.ChuyenDoiKiTuUnicode(TenDN) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data.Rows.Count > 0;
+        }
+        public DataTable TkTheoTenTaiKhoan(string maTK)
+        {
+            string query = "SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.TaiKhoan,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=TaiKhoan.MaLoaiTK AND dbo.ChuyenDoiKiTuUnicode(TenND) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data;
+        }
+        public bool CheckTkTheoTenTaiKhoan(string maTK)
+        {
+            string query = "SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.TaiKhoan,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=TaiKhoan.MaLoaiTK AND dbo.ChuyenDoiKiTuUnicode(TenND) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data.Rows.Count > 0;
+        }
+        public DataTable TkTheoLoaiTK(string maTK)
+        {
+            string query = "SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.TaiKhoan,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=TaiKhoan.MaLoaiTK AND dbo.ChuyenDoiKiTuUnicode(LoaiTK) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data;
+        }
+        public bool CheckTkTheoLoaiTK(string maTK)
+        {
+            string query = "SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.TaiKhoan,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=TaiKhoan.MaLoaiTK AND dbo.ChuyenDoiKiTuUnicode(LoaiTK) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'" + maTK + "')+N'%'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data.Rows.Count > 0;
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiKho.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,70 @@ namespace QuanLiKho.Views
 {
     public partial class fr_NhapHang : Form
     {
-        public fr_NhapHang()
+        private TaiKhoan tkDangNhap;
+
+        public TaiKhoan TkDangNhap
+        {
+            get { return tkDangNhap; }
+            set { tkDangNhap = value; }
+        }
+        public fr_NhapHang(TaiKhoan TKDN)
         {
             InitializeComponent();
+            this.TkDangNhap = TKDN;
+        }
+
+        private void LoadDSNhapHang()
+        {
+
+        }
+
+        private void RefreshText()
+        {
+
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVeMenu_Click(object sender, EventArgs e)
+        {
+            fr_Main f = new fr_Main(TkDangNhap);
+            this.Hide();
+            f.Show();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thực sự muốn thoát", "Thông Báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
 
         }

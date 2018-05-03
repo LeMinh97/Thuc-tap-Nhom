@@ -24,12 +24,12 @@ namespace QuanLiKho.Views
         {
             InitializeComponent();
             this.TkDangNhap = TKDN;
-            HienTenNguoiDung();
+            HienTenTaiKhoan();
         }
 
-        private void HienTenNguoiDung()
+        private void HienTenTaiKhoan()
         {
-            lbHienTenNguoiDung.Text = lbHienTenNguoiDung.Text + TkDangNhap.LoaiTK + ": " + TkDangNhap.TenND;
+            lbHienTenTaiKhoan.Text = lbHienTenTaiKhoan.Text + TkDangNhap.LoaiTK + ": " + TkDangNhap.TenND;
         }
         private void fr_Main_Load(object sender, EventArgs e)
         {
@@ -64,21 +64,21 @@ namespace QuanLiKho.Views
 
         private void hangHoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fr_HangHoa f = new fr_HangHoa();
+            fr_HangHoa f = new fr_HangHoa(TkDangNhap);
             this.Hide();
             f.Show();
         }
 
         private void nhapHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fr_NhapHang f = new fr_NhapHang();
+            fr_NhapHang f = new fr_NhapHang(TkDangNhap);
             this.Hide();
             f.Show();
         }
 
         private void xuatHangToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fr_XuatHang f = new fr_XuatHang();
+            fr_XuatHang f = new fr_XuatHang(TkDangNhap);
             this.Hide();
             f.Show();
         }

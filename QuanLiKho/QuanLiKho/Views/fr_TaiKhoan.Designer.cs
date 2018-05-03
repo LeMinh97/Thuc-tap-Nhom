@@ -34,10 +34,8 @@
             this.cbLoaiTK = new System.Windows.Forms.ComboBox();
             this.txtSDT = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtTenND = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTenDN = new System.Windows.Forms.TextBox();
@@ -60,6 +58,8 @@
             this.TenND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loaiTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.txtTenND = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -120,13 +120,6 @@
             this.panel3.Size = new System.Drawing.Size(341, 49);
             this.panel3.TabIndex = 2;
             // 
-            // txtMatKhau
-            // 
-            this.txtMatKhau.Location = new System.Drawing.Point(118, 15);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(189, 20);
-            this.txtMatKhau.TabIndex = 1;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -145,13 +138,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(341, 49);
             this.panel2.TabIndex = 1;
-            // 
-            // txtTenND
-            // 
-            this.txtTenND.Location = new System.Drawing.Point(118, 15);
-            this.txtTenND.Name = "txtTenND";
-            this.txtTenND.Size = new System.Drawing.Size(189, 20);
-            this.txtTenND.TabIndex = 1;
             // 
             // label2
             // 
@@ -359,6 +345,8 @@
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.Size = new System.Drawing.Size(794, 197);
             this.dgvTaiKhoan.TabIndex = 0;
+            this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick);
+            this.dgvTaiKhoan.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvTaiKhoan_RowPrePaint);
             // 
             // STT
             // 
@@ -392,6 +380,20 @@
             this.loaiTK.HeaderText = "Loại tài khoản";
             this.loaiTK.Name = "loaiTK";
             // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.Location = new System.Drawing.Point(118, 15);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(189, 20);
+            this.txtMatKhau.TabIndex = 1;
+            // 
+            // txtTenND
+            // 
+            this.txtTenND.Location = new System.Drawing.Point(118, 15);
+            this.txtTenND.Name = "txtTenND";
+            this.txtTenND.Size = new System.Drawing.Size(189, 20);
+            this.txtTenND.TabIndex = 1;
+            // 
             // fr_TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,6 +404,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "fr_TaiKhoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí Tài khoản";
             this.groupBox1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -428,10 +431,8 @@
         private System.Windows.Forms.ComboBox cbLoaiTK;
         private System.Windows.Forms.Label txtSDT;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtTenND;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTenDN;
@@ -454,5 +455,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenND;
         private System.Windows.Forms.DataGridViewTextBoxColumn matKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn loaiTK;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.TextBox txtTenND;
     }
 }

@@ -41,7 +41,7 @@
             this.thongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbHienTenNguoiDung = new System.Windows.Forms.Label();
+            this.lbHienTenTaiKhoan = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -151,15 +151,15 @@
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             // 
-            // lbHienTenNguoiDung
+            // lbHienTenTaiKhoan
             // 
-            this.lbHienTenNguoiDung.AutoSize = true;
-            this.lbHienTenNguoiDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHienTenNguoiDung.Location = new System.Drawing.Point(463, 9);
-            this.lbHienTenNguoiDung.Name = "lbHienTenNguoiDung";
-            this.lbHienTenNguoiDung.Size = new System.Drawing.Size(65, 16);
-            this.lbHienTenNguoiDung.TabIndex = 2;
-            this.lbHienTenNguoiDung.Text = "Xin chào, ";
+            this.lbHienTenTaiKhoan.AutoSize = true;
+            this.lbHienTenTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHienTenTaiKhoan.Location = new System.Drawing.Point(463, 9);
+            this.lbHienTenTaiKhoan.Name = "lbHienTenTaiKhoan";
+            this.lbHienTenTaiKhoan.Size = new System.Drawing.Size(65, 16);
+            this.lbHienTenTaiKhoan.TabIndex = 2;
+            this.lbHienTenTaiKhoan.Text = "Xin chào, ";
             // 
             // panel1
             // 
@@ -175,9 +175,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 569);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lbHienTenNguoiDung);
+            this.Controls.Add(this.lbHienTenTaiKhoan);
             this.Controls.Add(this.menuStrip1);
             this.Name = "fr_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí Kho";
             this.Load += new System.EventHandler(this.fr_Main_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -201,7 +202,7 @@
         private System.Windows.Forms.ToolStripMenuItem hướngDẫnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thongKeToolStripMenuItem;
-        private System.Windows.Forms.Label lbHienTenNguoiDung;
+        private System.Windows.Forms.Label lbHienTenTaiKhoan;
         private System.Windows.Forms.Panel panel1;
     }
 }
