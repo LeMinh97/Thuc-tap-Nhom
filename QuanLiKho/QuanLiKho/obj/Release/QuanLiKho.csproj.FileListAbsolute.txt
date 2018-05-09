@@ -1,0 +1,16 @@
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\bin\Release\QuanLiKho.exe.config
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\bin\Release\QuanLiKho.exe
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\bin\Release\QuanLiKho.pdb
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Form1.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Properties.Resources.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_DangNhap.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_HangHoa.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_Main.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_NhapHang.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_TaiKhoan.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_ThongKe.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_XuatHang.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.csproj.GenerateResource.Cache
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.exe
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.pdb

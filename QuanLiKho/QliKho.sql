@@ -260,3 +260,49 @@ VALUES  ( N'nam', -- TenDN - nvarchar(50)
           'LTK02'  -- MaLoaiTK - varchar(10)
           )
 GO
+
+CREATE FUNCTION [dbo].[ChuyenDoiKiTuUnicode] ( @strInput NVARCHAR(4000) )
+ RETURNS NVARCHAR(4000) AS BEGIN 
+ IF @strInput IS NULL RETURN @strInput
+ IF @strInput = '' RETURN @strInput 
+ DECLARE @RT NVARCHAR(4000) 
+ DECLARE @SIGN_CHARS NCHAR(136) 
+ DECLARE @UNSIGN_CHARS NCHAR (136) 
+ SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) 
+ SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' 
+ DECLARE @COUNTER int 
+ DECLARE @COUNTER1 int 
+ SET @COUNTER = 1 
+ WHILE (@COUNTER <=LEN(@strInput)) 
+ BEGIN SET @COUNTER1 = 1 
+ WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) 
+ BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) 
+ BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) 
+ ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) 
+ BREAK END 
+ SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END 
+ SET @strInput = replace(@strInput,' ','-') 
+ RETURN @strInput END
+GO
+-- Nháp
+INSERT dbo.HangHoa( MaHang , TenHang , NganhHang , DVT , SoLuong ) VALUES  ( '' , N'' , N'' , N'' , 0  )
+GO
+UPDATE dbo.HangHoa SET TenHang=N'',NganhHang=N'',DVT=N'', SoLuong= WHERE MaHang=''
+GO
+DELETE dbo.HangHoa WHERE MaHang=''
+GO
+SELECT * FROM dbo.HangHoa WHERE dbo.ChuyenDoiKiTuUnicode(DVT) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'm')+N'%'
+GO
+SELECT ChiTietPhieuXuat.MaPhieuXuat,NgayXuat,TenKH,TenHang,ChiTietPhieuXuat.SoLuong,DonGiaXuat FROM dbo.PhieuXuat,dbo.KhachHang,dbo.ChiTietPhieuXuat,dbo.HangHoa WHERE KhachHang.MaKH=PhieuXuat.MaKH AND ChiTietPhieuXuat.MaPhieuXuat=PhieuXuat.MaPhieuXuat AND ChiTietPhieuXuat.MaHang=HangHoa.MaHang
+GO
+SELECT MaPhieuXuat,NgayXuat,TenKH FROM dbo.PhieuXuat,dbo.KhachHang WHERE KhachHang.MaKH=PhieuXuat.MaKH
+GO
+SELECT MaPhieuXuat,TenHang,ChiTietPhieuXuat.SoLuong,DonGiaXuat FROM dbo.ChiTietPhieuXuat,dbo.HangHoa WHERE ChiTietPhieuXuat.MaHang=HangHoa.MaHang
+GO
+SELECT MaPhieuXuat,TenHang,ChiTietPhieuXuat.SoLuong,DonGiaXuat FROM dbo.ChiTietPhieuXuat,dbo.HangHoa WHERE ChiTietPhieuXuat.MaHang=HangHoa.MaHang AND dbo.ChuyenDoiKiTuUnicode(DonGiaXuat) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'')+N'%'
+GO
+SELECT MaPhieuNhap,NgayNhap,TenNCC FROM dbo.PhieuNhap,dbo.NhaCungCap WHERE NhaCungCap.MaNCC=PhieuNhap.MaNCC
+GO
+SELECT MaPhieuNhap,TenHang,ChiTietPhieuNhap.SoLuong,DonGiaNhap FROM dbo.ChiTietPhieuNhap,dbo.HangHoa WHERE ChiTietPhieuNhap.MaHang=HangHoa.MaHang
+GO
+SELECT MaPhieuNhap,NgayNhap,TenNCC FROM dbo.PhieuNhap,dbo.NhaCungCap WHERE NhaCungCap.MaNCC=PhieuNhap.MaNCC AND dbo.ChuyenDoiKiTuUnicode(MaPhieuNhap) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'')+N'%'

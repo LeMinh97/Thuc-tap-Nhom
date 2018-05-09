@@ -133,6 +133,7 @@
             // thongKeToolStripMenuItem
             // 
             this.thongKeToolStripMenuItem.Name = "thongKeToolStripMenuItem";
+            this.thongKeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.thongKeToolStripMenuItem.Size = new System.Drawing.Size(204, 24);
             this.thongKeToolStripMenuItem.Text = "Thống kê";
             this.thongKeToolStripMenuItem.Click += new System.EventHandler(this.thongKeToolStripMenuItem_Click);

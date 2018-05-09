@@ -44,8 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CbMaPhieuNhapDAO.cs" />
+    <Compile Include="DAO\CbMaPhieuXuatDAO.cs" />
+    <Compile Include="DAO\CbTenHangDAO.cs" />
+    <Compile Include="DAO\CbTenKhachHangDAO.cs" />
+    <Compile Include="DAO\CbTenNCCDAO.cs" />
     <Compile Include="DAO\LoaiTaiKhoanDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
+    <Compile Include="Data\CbMaPhieuNhap.cs" />
+    <Compile Include="Data\CbMaPhieuXuat.cs" />
+    <Compile Include="Data\CbTenHang.cs" />
+    <Compile Include="Data\CbTenKhachHang.cs" />
+    <Compile Include="Data\CbTenNCC.cs" />
     <Compile Include="Data\DataProvider.cs" />
     <Compile Include="Data\LoaiTaiKhoan.cs" />
     <Compile Include="Data\TaiKhoan.cs" />
@@ -57,9 +67,17 @@
     </Compile>
     <Compile Include="Module\DangNhap.cs" />
     <Compile Include="Module\SuaHangHoa.cs" />
+    <Compile Include="Module\SuaNhapHang.cs" />
+    <Compile Include="Module\SuaXuatHang.cs" />
     <Compile Include="Module\ThemHangHoa.cs" />
+    <Compile Include="Module\ThemNhapHang.cs" />
+    <Compile Include="Module\ThemXuatHang.cs" />
     <Compile Include="Module\TimKiemHangHoa.cs" />
+    <Compile Include="Module\TimKiemNhapHang.cs" />
+    <Compile Include="Module\TimKiemXuatHang.cs" />
     <Compile Include="Module\XoaHangHoa.cs" />
+    <Compile Include="Module\XoaNhapHang.cs" />
+    <Compile Include="Module\XoaXuatHang.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\fr_DangNhap.cs">
