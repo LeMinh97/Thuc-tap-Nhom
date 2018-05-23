@@ -1,0 +1,14 @@
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\bin\Release\QuanLiKhachSan.exe.config
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\bin\Release\QuanLiKhachSan.exe
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\bin\Release\QuanLiKhachSan.pdb
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Properties.Resources.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_DangNhap.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_Main.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_Phong.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_TaiKhoan.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.csproj.GenerateResource.Cache
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.exe
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.pdb
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_KhachHang.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_ThuePhong.resources
