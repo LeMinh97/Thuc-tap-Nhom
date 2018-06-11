@@ -1,0 +1,10 @@
+C:\Users\chien\source\repos\TTN1\TTN1\bin\Debug\TTN1.exe.config
+C:\Users\chien\source\repos\TTN1\TTN1\bin\Debug\TTN1.exe
+C:\Users\chien\source\repos\TTN1\TTN1\bin\Debug\TTN1.pdb
+C:\Users\chien\source\repos\TTN1\TTN1\obj\Debug\TTN1.csprojResolveAssemblyReference.cache
+C:\Users\chien\source\repos\TTN1\TTN1\obj\Debug\TTN1.Form1.resources
+C:\Users\chien\source\repos\TTN1\TTN1\obj\Debug\TTN1.Properties.Resources.resources
+C:\Users\chien\source\repos\TTN1\TTN1\obj\Debug\TTN1.csproj.GenerateResource.cache
+C:\Users\chien\source\repos\TTN1\TTN1\obj\Debug\TTN1.csproj.CoreCompileInputs.cache
+C:\Users\chien\source\repos\TTN1\TTN1\obj\Debug\TTN1.exe
+C:\Users\chien\source\repos\TTN1\TTN1\obj\Debug\TTN1.pdb
