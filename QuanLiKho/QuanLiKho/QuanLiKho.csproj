@@ -72,6 +72,7 @@
     <Compile Include="Module\ThemHangHoa.cs" />
     <Compile Include="Module\ThemNhapHang.cs" />
     <Compile Include="Module\ThemXuatHang.cs" />
+    <Compile Include="Module\ThongKe.cs" />
     <Compile Include="Module\TimKiemHangHoa.cs" />
     <Compile Include="Module\TimKiemNhapHang.cs" />
     <Compile Include="Module\TimKiemXuatHang.cs" />
@@ -91,6 +92,12 @@
     </Compile>
     <Compile Include="Views\fr_HangHoa.Designer.cs">
       <DependentUpon>fr_HangHoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fr_HuongDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fr_HuongDan.Designer.cs">
+      <DependentUpon>fr_HuongDan.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\fr_Main.cs">
       <SubType>Form</SubType>
@@ -116,6 +123,12 @@
     <Compile Include="Views\fr_ThongKe.Designer.cs">
       <DependentUpon>fr_ThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\fr_TroGiup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fr_TroGiup.Designer.cs">
+      <DependentUpon>fr_TroGiup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\fr_XuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +153,9 @@
     <EmbeddedResource Include="Views\fr_HangHoa.resx">
       <DependentUpon>fr_HangHoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\fr_HuongDan.resx">
+      <DependentUpon>fr_HuongDan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\fr_Main.resx">
       <DependentUpon>fr_Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fr_ThongKe.resx">
       <DependentUpon>fr_ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fr_TroGiup.resx">
+      <DependentUpon>fr_TroGiup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fr_XuatHang.resx">
       <DependentUpon>fr_XuatHang.cs</DependentUpon>

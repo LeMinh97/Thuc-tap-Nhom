@@ -14,3 +14,5 @@ C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_Xuat
 C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.csproj.GenerateResource.Cache
 C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.exe
 C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.pdb
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_HuongDan.resources
+C:\Users\DELL\Desktop\C#\QuanLiKho\QuanLiKho\obj\Release\QuanLiKho.Views.fr_TroGiup.resources

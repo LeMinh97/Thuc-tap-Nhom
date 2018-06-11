@@ -305,4 +305,21 @@ SELECT MaPhieuNhap,NgayNhap,TenNCC FROM dbo.PhieuNhap,dbo.NhaCungCap WHERE NhaCu
 GO
 SELECT MaPhieuNhap,TenHang,ChiTietPhieuNhap.SoLuong,DonGiaNhap FROM dbo.ChiTietPhieuNhap,dbo.HangHoa WHERE ChiTietPhieuNhap.MaHang=HangHoa.MaHang
 GO
-SELECT MaPhieuNhap,NgayNhap,TenNCC FROM dbo.PhieuNhap,dbo.NhaCungCap WHERE NhaCungCap.MaNCC=PhieuNhap.MaNCC AND dbo.ChuyenDoiKiTuUnicode(MaPhieuNhap) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'')+N'%'
+SELECT PhieuNhap.MaPhieuNhap,NgayNhap,TenNCC,TenHang,ChiTietPhieuNhap.SoLuong,DonGiaNhap FROM dbo.NhaCungCap,dbo.PhieuNhap,dbo.ChiTietPhieuNhap,dbo.HangHoa WHERE NhaCungCap.MaNCC=PhieuNhap.MaNCC AND PhieuNhap.MaPhieuNhap=ChiTietPhieuNhap.MaPhieuNhap AND ChiTietPhieuNhap.MaHang=HangHoa.MaHang AND NgayNhap BETWEEN '2018-1-1' AND'2018-3-1'
+GO
+SELECT PhieuXuat.MaPhieuXuat,NgayXuat,TenKH,TenHang,ChiTietPhieuXuat.SoLuong,DonGiaXuat FROM dbo.KhachHang,dbo.PhieuXuat,dbo.ChiTietPhieuXuat,dbo.HangHoa WHERE KhachHang.MaKH=PhieuXuat.MaKH AND PhieuXuat.MaPhieuXuat=ChiTietPhieuXuat.MaPhieuXuat AND ChiTietPhieuXuat.MaHang=HangHoa.MaHang AND NgayXuat BETWEEN '' AND ''
+GO
+
+-- hàm tính lãi
+CREATE FUNCTION HienLai(@ngayBatDau DATE,@ngayKetThuc DATE) RETURNS INT
+AS BEGIN
+DECLARE @TienNhap INT,@TienXuat INT
+SELECT @TienNhap=SUM(SoLuong*DonGiaNhap)  FROM dbo.PhieuNhap,dbo.ChiTietPhieuNhap WHERE ChiTietPhieuNhap.MaPhieuNhap=PhieuNhap.MaPhieuNhap AND NgayNhap BETWEEN @ngayBatDau AND @ngayKetThuc
+SELECT @TienXuat=SUM(SoLuong*DonGiaXuat) FROM dbo.PhieuXuat,dbo.ChiTietPhieuXuat WHERE ChiTietPhieuXuat.MaPhieuXuat=PhieuXuat.MaPhieuXuat AND NgayXuat BETWEEN @ngayBatDau AND @ngayKetThuc
+RETURN (@TienXuat-@TienNhap)
+END
+GO
+PRINT dbo.HienLai('2018-01-01', '2018-05-3')
+GO
+SELECT MaHang,TenHang,NganhHang,DVT,SoLuong FROM dbo.HangHoa GROUP BY NganhHang
+GO

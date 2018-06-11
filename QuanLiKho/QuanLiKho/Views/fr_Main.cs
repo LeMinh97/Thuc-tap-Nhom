@@ -85,8 +85,20 @@ namespace QuanLiKho.Views
 
         private void thongKeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fr_ThongKe f = new fr_ThongKe();
+            fr_ThongKe f = new fr_ThongKe(TkDangNhap);
             this.Hide();
+            f.Show();
+        }
+
+        private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fr_HuongDan f = new fr_HuongDan(TkDangNhap);
+            f.Show();
+        }
+
+        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fr_TroGiup f = new fr_TroGiup(TkDangNhap);
             f.Show();
         }
     }

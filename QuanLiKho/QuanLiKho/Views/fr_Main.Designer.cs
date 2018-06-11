@@ -43,6 +43,7 @@
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbHienTenTaiKhoan = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TaiKhoanToolStripMenuItem,
             this.DangNhapLaiToolStripMenuItem,
+            this.toolStripSeparator1,
             this.ThoatToolStripMenuItem});
             this.adminToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
@@ -144,6 +146,7 @@
             this.hướngDẫnToolStripMenuItem.Name = "hướngDẫnToolStripMenuItem";
             this.hướngDẫnToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.hướngDẫnToolStripMenuItem.Text = "Hướng dẫn";
+            this.hướngDẫnToolStripMenuItem.Click += new System.EventHandler(this.hướngDẫnToolStripMenuItem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
@@ -151,6 +154,7 @@
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
+            this.trợGiúpToolStripMenuItem.Click += new System.EventHandler(this.trợGiúpToolStripMenuItem_Click);
             // 
             // lbHienTenTaiKhoan
             // 
@@ -169,6 +173,11 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 533);
             this.panel1.TabIndex = 3;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(212, 6);
             // 
             // fr_Main
             // 
@@ -205,5 +214,6 @@
         private System.Windows.Forms.ToolStripMenuItem thongKeToolStripMenuItem;
         private System.Windows.Forms.Label lbHienTenTaiKhoan;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
