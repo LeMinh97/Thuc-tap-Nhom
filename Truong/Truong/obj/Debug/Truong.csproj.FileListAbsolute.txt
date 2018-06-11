@@ -1,0 +1,13 @@
+c:\users\chien\source\repos\Truong\Truong\bin\Debug\Truong.exe.config
+c:\users\chien\source\repos\Truong\Truong\bin\Debug\Truong.exe
+c:\users\chien\source\repos\Truong\Truong\bin\Debug\Truong.pdb
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.csprojResolveAssemblyReference.cache
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.FormHS.resources
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.Properties.Resources.resources
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.csproj.GenerateResource.cache
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.csproj.CoreCompileInputs.cache
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.exe
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.pdb
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.FormGV.resources
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.FormTTDG.resources
+c:\users\chien\source\repos\Truong\Truong\obj\Debug\Truong.Main.resources
