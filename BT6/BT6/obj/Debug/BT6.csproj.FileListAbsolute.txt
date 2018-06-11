@@ -1,0 +1,15 @@
+C:\Users\chien\source\repos\BT6\BT6\bin\Debug\BT6.exe.config
+C:\Users\chien\source\repos\BT6\BT6\bin\Debug\BT6.exe
+C:\Users\chien\source\repos\BT6\BT6\bin\Debug\BT6.pdb
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.csprojResolveAssemblyReference.cache
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.frmNhanVien.resources
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.Properties.Resources.resources
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.csproj.GenerateResource.cache
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.csproj.CoreCompileInputs.cache
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.exe
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.pdb
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.FormKH.resources
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.FormNhapHang.resources
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.TimHang.resources
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.FormBanHang.resources
+C:\Users\chien\source\repos\BT6\BT6\obj\Debug\BT6.Main.resources
