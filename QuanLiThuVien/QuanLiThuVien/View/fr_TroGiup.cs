@@ -32,5 +32,12 @@ namespace QuanLiThuVien.View
             this.Hide();
             f.Show();
         }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            fr_Main f = new fr_Main(TkDangNhap);
+            this.Hide();
+            f.Show();
+        }
     }
 }

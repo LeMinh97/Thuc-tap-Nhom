@@ -80,6 +80,7 @@ CREATE TABLE LoaiTK
 	MaLoaiTK INT PRIMARY KEY,
 	LoaiTK NVARCHAR(50)
 )
+GO
 CREATE TABLE NguoiDung
 (
 	TenDN NVARCHAR(50) PRIMARY KEY,
@@ -379,4 +380,6 @@ GO
 SELECT * FROM dbo.NhaXB
 GO
 SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.NguoiDung,dbo.LoaiTK WHERE NguoiDung.MaLoaiTK=LoaiTK.MaLoaiTK
+GO
+SELECT TenDN,TenND,MatKhau,LoaiTK FROM dbo.NguoiDung,dbo.LoaiTK WHERE LoaiTK.MaLoaiTK=NguoiDung.MaLoaiTK AND dbo.fuConvertToUnsign1(TenDN) LIKE N'%'+dbo.fuConvertToUnsign1(N'h')+N'%'
 GO

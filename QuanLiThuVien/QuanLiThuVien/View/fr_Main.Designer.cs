@@ -42,6 +42,7 @@
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTenNguoiDung = new System.Windows.Forms.Label();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TaiKhoanToolStripMenuItem,
             this.DangNhapLaiToolStripMenuItem,
+            this.toolStripSeparator1,
             this.ThoatToolStripMenuItem});
             this.adminToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
@@ -163,6 +165,11 @@
             this.lbTenNguoiDung.TabIndex = 2;
             this.lbTenNguoiDung.Text = "Xin Chào, ";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(212, 6);
+            // 
             // fr_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,5 +204,6 @@
         private System.Windows.Forms.ToolStripMenuItem DangNhapLaiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ThoatToolStripMenuItem;
         private System.Windows.Forms.Label lbTenNguoiDung;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
