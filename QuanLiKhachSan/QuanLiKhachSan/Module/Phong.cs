@@ -19,15 +19,15 @@ namespace QuanLiKhachSan.Module
         }
         private Phong() { }
 
-        public bool ThemPhong(string maPhong, string loaiPhong, string moTa,int tinhTrang, int donGiaGio)
+        public bool ThemPhong(string maPhong, string loaiPhong, string moTa,string tinhTrang, int donGiaGio)
         {
-            string query = "INSERT dbo.Phong( MaPhong ,LoaiPhong ,MoTa ,TinhTrang ,DonGiaGio) VALUES  ( '"+maPhong+"' ,N'"+loaiPhong+"' ,N'"+moTa+"' ,"+tinhTrang+" , "+donGiaGio+" )";
+            string query = "INSERT dbo.Phong( MaPhong ,LoaiPhong ,MoTa ,TinhTrang ,DonGiaGio) VALUES  ( '"+maPhong+"' ,N'"+loaiPhong+"' ,N'"+moTa+"' ,N'"+tinhTrang+"' , "+donGiaGio+" )";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool SuaPhong(string maPhong, string loaiPhong, string moTa, int tinhTrang, int donGiaGio)
+        public bool SuaPhong(string maPhong, string loaiPhong, string moTa, string tinhTrang, int donGiaGio)
         {
-            string query = "UPDATE dbo.Phong SET LoaiPhong=N'"+loaiPhong+"',MoTa=N'"+moTa+"', TinhTrang="+tinhTrang+", DonGiaGio="+donGiaGio+" WHERE MaPhong='"+maPhong+"'";
+            string query = "UPDATE dbo.Phong SET LoaiPhong=N'"+loaiPhong+"',MoTa=N'"+moTa+"', TinhTrang=N'"+tinhTrang+"', DonGiaGio="+donGiaGio+" WHERE MaPhong='"+maPhong+"'";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

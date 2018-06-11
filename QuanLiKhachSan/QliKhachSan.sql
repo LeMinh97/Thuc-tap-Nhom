@@ -27,9 +27,11 @@ CREATE TABLE ThuePhong(
 	MaKhachHang VARCHAR(10) REFERENCES dbo.KhachHang(MaKhachHang),
 	MaPhong VARCHAR(10) REFERENCES dbo.Phong(MaPhong),
 	NgayThue DATE,
-	ThoiGian INT,
-	PRIMARY KEY(MaKhachHang,MaPhong)
+	ThoiGianO INT,
+	ThanhToan NVARCHAR(50),
+	PRIMARY KEY(MaKhachHang,MaPhong,NgayThue)
 )
+GO
 
 CREATE TABLE DichVu(
 	MaDichVu VARCHAR(10) PRIMARY KEY,
@@ -45,56 +47,34 @@ CREATE TABLE DoDung(
 )
 GO
 
-CREATE TABLE HoaDonDoDung(
-	MaHoaDonDoDung VARCHAR(10) PRIMARY KEY,
-	MaKhachHang VARCHAR(10) REFERENCES dbo.KhachHang(MaKhachHang),
+CREATE TABLE DoDungTheoPhong(
 	MaPhong VARCHAR(10) REFERENCES dbo.Phong(MaPhong),
-	NgayLap DATE,
-	TongTien INT
-)
-GO
-
-CREATE TABLE ChiTietHoaDonDoDung(
-	MaHoaDonDoDung VARCHAR(10) REFERENCES dbo.HoaDonDoDung(MaHoaDonDoDung),
 	MaDoDung VARCHAR(10) REFERENCES dbo.DoDung(MaDoDung),
-	SoLuongDung INT,
-	ThanhTien INT,
-	PRIMARY KEY(MaHoaDonDoDung,MaDoDung)
+	NgayKT DATE,
+	SoLuongBanDau INT,
+	SoLuongDaDung INT,
+	PRIMARY KEY(MaPhong,MaDoDung,NgayKT)
 )
 GO
 
-CREATE TABLE HoaDonDV(
-	MaHoaDonDV VARCHAR(10) PRIMARY KEY,
-	MaKhachHang VARCHAR(10) REFERENCES dbo.KhachHang(MaKhachHang),
+CREATE TABLE SuDungDichVu(
 	MaPhong VARCHAR(10) REFERENCES dbo.Phong(MaPhong),
-	NgayLap DATE,
-	TongTien INT
-)
-GO
-
-CREATE TABLE ChiTietHDDV(
-	MaHoaDonDV VARCHAR(10) REFERENCES dbo.HoaDonDV(MaHoaDonDV),
 	MaDichVu VARCHAR(10) REFERENCES dbo.DichVu(MaDichVu),
+	NgayDung DATE,
 	SoLuong INT,
-	ThanhTien INT,
-	PRIMARY KEY(MaHoaDonDV,MaDichVu)
+	ThanhToan NVARCHAR(50),
+	PRIMARY KEY(MaPhong,MaDichVu,NgayDung)
 )
 GO
 
-CREATE TABLE HoaDonTraPhong(
-	MaHoaDonTP VARCHAR(10) PRIMARY KEY,
-	MaKhachHang VARCHAR(10) REFERENCES dbo.KhachHang(MaKhachHang),
-	NgayTra DATE,
-	TongTien INT
-)
-GO
-
-CREATE TABLE ChiTietHoaDonTP(
-	MaHoaDonTP VARCHAR(10) REFERENCES dbo.HoaDonTraPhong(MaHoaDonTP),
+CREATE TABLE ThanhToan(
+	MaHoaDon INT IDENTITY PRIMARY KEY,
 	MaPhong VARCHAR(10) REFERENCES dbo.Phong(MaPhong),
-	ThoiGian INT,
-	ThanhTien INT,
-	PRIMARY KEY(MaHoaDonTP,MaPhong)
+    TenKhachHang NVARCHAR(50),
+	NgayThanhToan DATE,
+	NgayThue DATE,
+	ThoiGianO INT,
+	TongTien INT
 )
 GO
 
@@ -329,183 +309,95 @@ VALUES  ( N'nam', -- TenDN - nvarchar(50)
           )
 GO
 
-INSERT dbo.ThuePhong
-        ( MaKhachHang ,
-          MaPhong ,
-          NgayThue ,
-          ThoiGian
+
+
+INSERT dbo.DoDungTheoPhong
+        ( MaPhong ,
+          MaDoDung ,
+          NgayKT ,
+          SoLuongBanDau ,
+          SoLuongDaDung
         )
-VALUES  ( 'KH01' , -- MaKhachHang - varchar(10)
-          'P102' , -- MaPhong - varchar(10)
-          '2018-4-20 11:00:00' , -- NgayThue - datetime
-          48  -- ThoiGian - int
+VALUES  ( 'P101' , -- MaPhong - varchar(10)
+          'DD01' , -- MaDoDung - varchar(10)
+          '2018-5-5' , -- NgayKT - date
+          5 , -- SoLuongBanDau - int
+          1  -- SoLuongDaDung - int
         )
 GO
 
+INSERT dbo.DoDungTheoPhong
+        ( MaPhong ,
+          MaDoDung ,
+          NgayKT ,
+          SoLuongBanDau ,
+          SoLuongDaDung
+        )
+VALUES  ( 'P102' , -- MaPhong - varchar(10)
+          'DD02' , -- MaDoDung - varchar(10)
+          '2018-5-3' , -- NgayKT - date
+          2 , -- SoLuongBanDau - int
+          2  -- SoLuongDaDung - int
+        )
+GO
 INSERT dbo.ThuePhong
         ( MaKhachHang ,
           MaPhong ,
           NgayThue ,
-          ThoiGian
+          ThoiGianO ,
+          ThanhToan
+        )
+VALUES  ( 'KH01' , -- MaKhachHang - varchar(10)
+          'P101' , -- MaPhong - varchar(10)
+          '2018-1-1' , -- NgayThue - date
+          24 , -- ThoiGianO - int
+          N'Chưa'  -- ThanhToan - bit
+        )
+GO
+INSERT dbo.ThuePhong
+        ( MaKhachHang ,
+          MaPhong ,
+          NgayThue ,
+          ThoiGianO ,
+          ThanhToan
         )
 VALUES  ( 'KH02' , -- MaKhachHang - varchar(10)
           'P201' , -- MaPhong - varchar(10)
-          '2018-5-1 19:00:00' , -- NgayThue - datetime
-          28  -- ThoiGian - int
+          '2018-2-2' , -- NgayThue - date
+          72 , -- ThoiGianO - int
+          N'Chưa'  -- ThanhToan - bit
         )
 GO
-
-INSERT dbo.HoaDonDV
-        ( MaHoaDonDV ,
-          MaKhachHang ,
-          MaPhong ,
-          NgayLap ,
-          TongTien
-        )
-VALUES  ( 'HDDV01' , -- MaHoaDonDV - varchar(10)
-          'KH01' , -- MaKhachHang - varchar(10)
-          'P102' , -- MaPhong - varchar(10)
-          '2018-4-20' , -- NgayLap - date
-          200000  -- TongTien - int
-        )
-GO
-
-INSERT dbo.HoaDonDV
-        ( MaHoaDonDV ,
-          MaKhachHang ,
-          MaPhong ,
-          NgayLap ,
-          TongTien
-        )
-VALUES  ( 'HDDV02' , -- MaHoaDonDV - varchar(10)
-          'KH02' , -- MaKhachHang - varchar(10)
-          'P201' , -- MaPhong - varchar(10)
-          '2018-5-1' , -- NgayLap - date
-          800000  -- TongTien - int
-        )
-GO
-
-INSERT dbo.ChiTietHDDV
-        ( MaHoaDonDV ,
+INSERT dbo.SuDungDichVu
+        ( MaPhong ,
           MaDichVu ,
+          NgayDung ,
           SoLuong ,
-          ThanhTien
+          ThanhToan
         )
-VALUES  ( 'HDDV01' , -- MaHoaDonDV - varchar(10)
-          'DV01' , -- MaDichVu - varchar(10)
-          1 , -- SoLuong - int
-          200000  -- ThanhTien - int
-        )
-GO
-
-INSERT dbo.ChiTietHDDV
-        ( MaHoaDonDV ,
-          MaDichVu ,
-          SoLuong ,
-          ThanhTien
-        )
-VALUES  ( 'HDDV02' , -- MaHoaDonDV - varchar(10)
+VALUES  ( 'P101' , -- MaPhong - varchar(10)
           'DV02' , -- MaDichVu - varchar(10)
-          2 , -- SoLuong - int
-          600000  -- ThanhTien - int
+          '2018-1-1' , -- NgayDung - date
+          3 , -- SoLuong - int
+          N'Chưa'  -- ThanhToan - bit
         )
 GO
-
-INSERT dbo.ChiTietHDDV
-        ( MaHoaDonDV ,
+INSERT dbo.SuDungDichVu
+        ( MaPhong ,
           MaDichVu ,
+          NgayDung ,
           SoLuong ,
-          ThanhTien
+          ThanhToan
         )
-VALUES  ( 'HDDV02' , -- MaHoaDonDV - varchar(10)
+VALUES  ( 'P201' , -- MaPhong - varchar(10)
           'DV01' , -- MaDichVu - varchar(10)
-          1 , -- SoLuong - int
-          200000  -- ThanhTien - int
+          '2018-2-2' , -- NgayDung - date
+          2 , -- SoLuong - int
+          N'Chưa'  -- ThanhToan - bit
         )
 GO
 
-INSERT dbo.HoaDonDoDung
-        ( MaHoaDonDoDung ,
-          MaKhachHang ,
-          MaPhong ,
-          NgayLap ,
-          TongTien
-        )
-VALUES  ( 'HDDD01' , -- MaHoaDonDoDung - varchar(10)
-          'KH02' , -- MaKhachHang - varchar(10)
-          'P201' , -- MaPhong - varchar(10)
-          '2018-5-1' , -- NgayLap - date
-          50000  -- TongTien - int
-        )
-GO
-
-INSERT dbo.HoaDonDoDung
-        ( MaHoaDonDoDung ,
-          MaKhachHang ,
-          MaPhong ,
-          NgayLap ,
-          TongTien
-        )
-VALUES  ( 'HDDD02' , -- MaHoaDonDoDung - varchar(10)
-          'KH01' , -- MaKhachHang - varchar(10)
-          'P102' , -- MaPhong - varchar(10)
-          '2018-4-20' , -- NgayLap - date
-          40000  -- TongTien - int
-        )
-GO
-
-INSERT dbo.ChiTietHoaDonDoDung
-        ( MaHoaDonDoDung ,
-          MaDoDung ,
-          SoLuongDung ,
-          ThanhTien
-        )
-VALUES  ( 'HDDD01' , -- MaHoaDonDoDung - varchar(10)
-          'DD01' , -- MaDoDung - varchar(10)
-          1, -- SoLuongDung - int
-          50000  -- ThanhTien - int
-        )
-GO
-
-INSERT dbo.ChiTietHoaDonDoDung
-        ( MaHoaDonDoDung ,
-          MaDoDung ,
-          SoLuongDung ,
-          ThanhTien
-        )
-VALUES  ( 'HDDD02' , -- MaHoaDonDoDung - varchar(10)
-          'DD02' , -- MaDoDung - varchar(10)
-          2 , -- SoLuongDung - int
-          40000  -- ThanhTien - int
-        )
-GO
-
-INSERT dbo.HoaDonTraPhong
-        ( MaHoaDonTP ,
-          MaKhachHang ,
-          NgayTra ,
-          TongTien
-        )
-VALUES  ( 'HDTP01' , -- MaHoaDonTP - varchar(10)
-          'KH01' , -- MaKhachHang - varchar(10)
-          '2018-4-22' , -- NgayTra - date
-          0  -- TongTien - int
-        )
-GO
-
-INSERT dbo.ChiTietHoaDonTP
-        ( MaHoaDonTP ,
-          MaPhong ,
-          ThoiGian ,
-          ThanhTien
-        )
-VALUES  ( 'HDTP01' , -- MaHoaDonTP - varchar(10)
-          'P102' , -- MaPhong - varchar(10)
-          48 , -- ThoiGian - int
-          4800000  -- ThanhTien - int
-        )
-GO
-
+--
 CREATE FUNCTION [dbo].[ChuyenDoiKiTuUnicode] ( @strInput NVARCHAR(4000) )
  RETURNS NVARCHAR(4000) AS BEGIN 
  IF @strInput IS NULL RETURN @strInput
@@ -535,3 +427,33 @@ SELECT TenKhachHang,MaPhong,NgayThue,ThoiGian FROM dbo.ThuePhong,dbo.KhachHang W
 GO
 SELECT * FROM dbo.Phong WHERE TinhTrang=0
 GO
+SELECT MaPhong,TenDoDung,NgayKT,SoLuongBanDau,SoLuongDaDung FROM dbo.DoDungTheoPhong,dbo.DoDung WHERE DoDungTheoPhong.MaDoDung=DoDung.MaDoDung AND dbo.ChuyenDoiKiTuUnicode(MaPhong) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'1')+N'%'
+GO
+SELECT MaPhong,TenDichVu,NgayDung,SoLuong,ThanhToan FROM dbo.SuDungDichVu,dbo.DichVu WHERE DichVu.MaDichVu=SuDungDichVu.MaDichVu AND dbo.ChuyenDoiKiTuUnicode(MaPhong) LIKE N'%'+dbo.ChuyenDoiKiTuUnicode(N'2')+N'%'
+GO
+ALTER TABLE dbo.Phong ADD TinhTrang NVARCHAR(50)
+GO
+
+-- câu truy vấn thông tin trả phòng
+SELECT ThuePhong.MaPhong, TenKhachHang, NgayThue, ThoiGianO, ThoiGianO*DonGiaGio AS ThanhTien1 FROM dbo.ThuePhong, dbo.KhachHang, dbo.Phong WHERE KhachHang.MaKhachHang=ThuePhong.MaKhachHang AND ThuePhong.MaPhong=Phong.MaPhong AND ThuePhong.MaPhong='P101' AND ThanhToan LIKE N'Chưa'
+GO
+
+--câu truy vấn tính tiền phòng
+SELECT ThoiGianO*DonGiaGio AS TienPhong FROM dbo.ThuePhong, dbo.Phong WHERE ThuePhong.MaPhong=Phong.MaPhong AND ThuePhong.MaPhong='P101' AND ThanhToan LIKE N'Chưa'
+GO
+
+-- câu truy vấn thông tin dịch vụ
+SELECT MaPhong,TenDichVu, NgayDung, SoLuong,DonGia, SoLuong*DonGia AS ThanhTien FROM dbo.DichVu,dbo.SuDungDichVu WHERE DichVu.MaDichVu=SuDungDichVu.MaDichVu AND ThanhToan LIKE N'Chưa' AND MaPhong='P101'
+GO
+
+-- câu truy vấn tính tiền dịch vụ
+SELECT SUM(SoLuong*DonGia) AS TienDichVu FROM dbo.DichVu,dbo.SuDungDichVu WHERE DichVu.MaDichVu=SuDungDichVu.MaDichVu AND ThanhToan LIKE N'Chưa' AND MaPhong='P101' GROUP BY SoLuong*DonGia
+GO
+
+-- hàm tính tổng tiền
+SELECT a.TienPhong+b.TienDichVu AS TongTien FROM
+(SELECT ThoiGianO*DonGiaGio AS TienPhong FROM dbo.ThuePhong, dbo.Phong WHERE ThuePhong.MaPhong=Phong.MaPhong AND ThuePhong.MaPhong='P201' AND ThanhToan LIKE N'Chưa') AS a,
+(SELECT SUM(SoLuong*DonGia) AS TienDichVu FROM dbo.DichVu,dbo.SuDungDichVu WHERE DichVu.MaDichVu=SuDungDichVu.MaDichVu AND ThanhToan LIKE N'Chưa' AND MaPhong='P201' GROUP BY SoLuong*DonGia) AS b
+GO
+
+

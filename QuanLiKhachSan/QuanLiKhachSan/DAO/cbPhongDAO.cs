@@ -18,10 +18,22 @@ namespace QuanLiKhachSan.DAO
             private set { cbPhongDAO.instance = value; }
         }
         private cbPhongDAO() { }
-        public List<cbPhong> LayDSThuePhong()
+        public List<cbPhong> LayDSPhong()
         {
             List<cbPhong> list = new List<cbPhong>();
-            string query = "SELECT * FROM dbo.Phong WHERE TinhTrang=0";
+            string query = "SELECT * FROM dbo.Phong";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                cbPhong dsPhong = new cbPhong(item);
+                list.Add(dsPhong);
+            }
+            return list;
+        }
+        public List<cbPhong> LayDSPhongTrong()
+        {
+            List<cbPhong> list = new List<cbPhong>();
+            string query = "SELECT * FROM dbo.Phong WHERE TinhTrang=N'Chưa'";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -31,10 +43,10 @@ namespace QuanLiKhachSan.DAO
             return list;
         }
 
-        public List<cbPhong> LayDSTraPhong()
+        public List<cbPhong> LayDSPhongDat()
         {
             List<cbPhong> list = new List<cbPhong>();
-            string query = "SELECT * FROM dbo.Phong WHERE TinhTrang=1";
+            string query = "SELECT * FROM dbo.Phong WHERE TinhTrang=N'OK'";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             foreach (DataRow item in data.Rows)
             {

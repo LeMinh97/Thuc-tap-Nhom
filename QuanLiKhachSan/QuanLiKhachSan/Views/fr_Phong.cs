@@ -40,7 +40,7 @@ namespace QuanLiKhachSan.Views
             txtMaPhong.Text = "";
             txtLoaiPhong.Text = "";
             txtMoTa.Text = "";
-            txtTinhTrang.Text = "";
+            cbTinhTrang.Text = "";
             txtDonGiaGio.Text = "";
             txtTimKiem.Text = "";
             cbTimKiem.Text = "";
@@ -52,7 +52,7 @@ namespace QuanLiKhachSan.Views
             string maPhong = txtMaPhong.Text;
             string loaiPhong = txtLoaiPhong.Text;
             string moTa = txtMoTa.Text;
-            int tinhTrang;
+            string tinhTrang = cbTinhTrang.SelectedItem.ToString();
             int donGiaGio = Convert.ToInt32(txtDonGiaGio.Text);
             if (maPhong == "")
             {
@@ -66,7 +66,7 @@ namespace QuanLiKhachSan.Views
             {
                 MessageBox.Show("Bạn chưa nhập Mô tả!", "Thông báo");
             }
-            else if (txtTinhTrang.Text == "")
+            else if (tinhTrang == "")
             {
                 MessageBox.Show("Bạn chưa nhập Tình Trạng!", "Thông báo");
             }
@@ -76,13 +76,11 @@ namespace QuanLiKhachSan.Views
             }
             else
             {
-                if (txtTinhTrang.Text == "1" || txtTinhTrang.Text == "True")
-                { tinhTrang = 1; }
-                else tinhTrang = 0;
                 if (Phong.Instance.ThemPhong(maPhong,loaiPhong,moTa,tinhTrang,donGiaGio) == true)
                 {
                     MessageBox.Show("Thêm thành công", "Thông Báo");
                     LoadDSPhong();
+                    RefreshText();
                 }
                 else MessageBox.Show("Có lỗi khi thêm phòng!", "Thông Báo");
             }
@@ -93,16 +91,14 @@ namespace QuanLiKhachSan.Views
             string maPhong = txtMaPhong.Text;
             string loaiPhong = txtLoaiPhong.Text;
             string moTa = txtMoTa.Text;
-            int tinhTrang;
+            string tinhTrang = cbTinhTrang.SelectedItem.ToString();
             int donGiaGio = Convert.ToInt32(txtDonGiaGio.Text);
 
-            if (txtTinhTrang.Text == "1" || txtTinhTrang.Text == "True")
-            { tinhTrang = 1; }
-            else tinhTrang = 0;
             if (Phong.Instance.SuaPhong(maPhong, loaiPhong, moTa, tinhTrang, donGiaGio) == true)
             {
                 MessageBox.Show("Sửa thành công", "Thông Báo");
                 LoadDSPhong();
+                RefreshText();
             }
             else MessageBox.Show("Có lỗi khi sửa phòng!", "Thông Báo");
         }
@@ -114,6 +110,7 @@ namespace QuanLiKhachSan.Views
             {
                 MessageBox.Show("Xóa thành công", "Thông Báo");
                 LoadDSPhong();
+                RefreshText();
             }
             else MessageBox.Show("Có lỗi khi xóa phòng!", "Thông Báo");
         }
@@ -204,7 +201,7 @@ namespace QuanLiKhachSan.Views
                 txtMaPhong.Text = Convert.ToString(dgvPhong.CurrentRow.Cells["maPhong"].Value);
                 txtLoaiPhong.Text = Convert.ToString(dgvPhong.CurrentRow.Cells["loaiPhong"].Value);
                 txtMoTa.Text = Convert.ToString(dgvPhong.CurrentRow.Cells["moTa"].Value);
-                txtTinhTrang.Text = Convert.ToString(dgvPhong.CurrentRow.Cells["tinhTrang"].Value);
+                cbTinhTrang.Text = Convert.ToString(dgvPhong.CurrentRow.Cells["tinhTrang"].Value);
                 txtDonGiaGio.Text = Convert.ToString(dgvPhong.CurrentRow.Cells["donGiaGio"].Value);
             }
         }

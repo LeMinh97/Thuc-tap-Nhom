@@ -44,10 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\cbDichVuDAO.cs" />
+    <Compile Include="DAO\cbDoDungDAO.cs" />
     <Compile Include="DAO\cbKhachHangDAO.cs" />
     <Compile Include="DAO\cbPhongDAO.cs" />
     <Compile Include="DAO\LoaiTaiKhoanDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
+    <Compile Include="Data\cbDichVu.cs" />
+    <Compile Include="Data\cbDoDung.cs" />
     <Compile Include="Data\cbKhachHang.cs" />
     <Compile Include="Data\cbPhong.cs" />
     <Compile Include="Data\DataProvider.cs" />
@@ -65,7 +69,7 @@
     <Compile Include="Module\SuDungDichVu.cs" />
     <Compile Include="Module\ThuePhong.cs" />
     <Compile Include="Module\TraPhong.cs" />
-    <Compile Include="Module\VatDung.cs" />
+    <Compile Include="Module\DoDung.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\fr_DangNhap.cs">
@@ -146,6 +150,9 @@
     <EmbeddedResource Include="Views\fr_DangNhap.resx">
       <DependentUpon>fr_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\fr_HuongDan.resx">
+      <DependentUpon>fr_HuongDan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\fr_KhachHang.resx">
       <DependentUpon>fr_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,11 +162,23 @@
     <EmbeddedResource Include="Views\fr_Phong.resx">
       <DependentUpon>fr_Phong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\fr_SDDichVu.resx">
+      <DependentUpon>fr_SDDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\fr_TaiKhoan.resx">
       <DependentUpon>fr_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fr_ThuePhong.resx">
       <DependentUpon>fr_ThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fr_TraPhong.resx">
+      <DependentUpon>fr_TraPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fr_TroGiup.resx">
+      <DependentUpon>fr_TroGiup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fr_VatDung.resx">
+      <DependentUpon>fr_VatDung.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

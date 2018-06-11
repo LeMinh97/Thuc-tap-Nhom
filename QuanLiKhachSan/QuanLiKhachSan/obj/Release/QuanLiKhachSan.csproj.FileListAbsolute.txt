@@ -12,3 +12,8 @@ C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSa
 C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.csprojResolveAssemblyReference.cache
 C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_KhachHang.resources
 C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_ThuePhong.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_VatDung.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_SDDichVu.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_TraPhong.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_HuongDan.resources
+C:\Users\DELL\Desktop\C#\QuanLiKhachSan\QuanLiKhachSan\obj\Release\QuanLiKhachSan.Views.fr_TroGiup.resources

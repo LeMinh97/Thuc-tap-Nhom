@@ -67,12 +67,16 @@ namespace QuanLiKhachSan.Views
 
         private void TraPhongToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            fr_TraPhong f = new fr_TraPhong(TkDangNhap);
+            this.Hide();
+            f.Show();
         }
 
         private void SdDichVuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            fr_SDDichVu f = new fr_SDDichVu(TkDangNhap);
+            this.Hide();
+            f.Show();
         }
 
         private void phòngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,7 +95,21 @@ namespace QuanLiKhachSan.Views
 
         private void vậtDụngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            fr_VatDung f = new fr_VatDung(TkDangNhap);
+            this.Hide();
+            f.Show();
+        }
 
+        private void HuongDanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fr_HuongDan f = new fr_HuongDan(TkDangNhap);
+            f.Show();
+        }
+
+        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fr_TroGiup f = new fr_TroGiup(TkDangNhap);
+            f.Show();
         }
     }
 }

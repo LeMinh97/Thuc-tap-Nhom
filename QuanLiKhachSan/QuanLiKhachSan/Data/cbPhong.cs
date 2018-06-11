@@ -9,7 +9,7 @@ namespace QuanLiKhachSan.Data
 {
     public class cbPhong
     {
-        public cbPhong(string maPhong, string loaiPhong, string moTa, bool tinhTrang, int donGiaGio)
+        public cbPhong(string maPhong, string loaiPhong, string moTa, string tinhTrang, int donGiaGio)
         {
             this.MaPhong = maPhong;
             this.LoaiPhong = loaiPhong;
@@ -23,7 +23,7 @@ namespace QuanLiKhachSan.Data
             this.MaPhong = row["MaPhong"].ToString();
             this.LoaiPhong = row["LoaiPhong"].ToString();
             this.MoTa = row["MoTa"].ToString();
-            this.TinhTrang = (bool)row["TinhTrang"];
+            this.TinhTrang = row["TinhTrang"].ToString();
             this.DonGiaGio = (int)row["DonGiaGio"];
         }
         private string maPhong;
@@ -49,9 +49,9 @@ namespace QuanLiKhachSan.Data
             set { moTa = value; }
         }
 
-        private bool tinhTrang;
+        private string tinhTrang;
 
-        public bool TinhTrang
+        public string TinhTrang
         {
             get { return tinhTrang; }
             set { tinhTrang = value; }
